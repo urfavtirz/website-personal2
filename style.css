@@ -1,0 +1,7 @@
+.menu-item.blue {
+    background: linear-gradient(to right, #007bff, #0056b3);
+}
+
+.menu-item.blue:hover {
+    background: linear-gradient(to right, #0056b3, #003c80);
+}

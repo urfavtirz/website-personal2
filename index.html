@@ -1,0 +1,148 @@
+    <!DOCTYPE html>
+    <html lang="id">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Profile Page</title>
+        <link rel="stylesheet" href="style.css">
+        <script defer src="script.js"></script>
+        <style>
+            body {
+                margin: 0;
+                font-family: Arial, sans-serif;
+                text-align: center;
+                background: linear-gradient(to bottom, #2c2c2c, #ffff);
+                color: white;
+            }
+            .banner-container {
+                position: relative;
+                text-align: center;
+                background: url('img/ft.jpg') no-repeat center center/cover;
+                height: 170px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding-top: 20px;
+            }
+            .title {
+                font-size: 24px;
+                font-weight: bold;
+                margin: 5px 0 0;
+            }
+            .subtitle {
+                font-size: 16px;
+            }
+            .profile {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: -50px;
+            }
+            .profile-pic {
+                width: 100px;
+                height: 100px;
+                border-radius: 50%;
+                border: 3px solid white;
+                background-color: white;
+                object-fit: cover;
+            }
+            .menu {
+                padding: 20px;
+            }
+            .menu-item {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 80%;
+                max-width: 300px;
+                margin: 10px auto;
+                padding: 15px;
+                color: white;
+                border: none;
+                border-radius: 8px;
+                font-size: 16px;
+                cursor: pointer;
+                transition: background 0.3s;
+            }
+            .menu-item.red {
+                background: red;
+            }
+            .menu-item.red:hover {
+                background: black;
+            }
+            .menu-item.blue {
+                background: #5a5a5a;
+            }
+            .menu-item.blue:hover {
+                background: pink;
+            }
+            .icon {
+                margin-right: 10px;
+            }
+            .divider {
+                margin: 20px 0;
+                border-top: 1px solid white;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <div class="banner-container">
+                <h1 class="title">Mochamad Fathir Aldiansyah</h1>
+                <p class="subtitle">Computer Network Engineering</p>
+            </div>
+            <div class="profile">
+                <img src="img/f.jpg" alt="Profile Picture" class="profile-pic">
+                <h2>Mochamad Fathir Aldiansyah</h2>
+                <p>Deskripsi Bio</p>
+            </div>
+        </header>
+        
+        <section class="menu">
+            <button class="menu-item red" id="portSecurity"><span class="icon">▶</span> NETWORK FUNDAMENTAL</button>
+            <button class="menu-item red" id="vlanTrunking"><span class="icon">▶</span> IP ADDRESS & SUBNETTING</button>
+        
+            
+            <div class="divider"></div>
+            <p>Write down your text here!</p>
+            
+            <button class="menu-item blue" id="website"><span class="icon">🌍</span> Website Sekolah</button>
+            <button class="menu-item blue" id="instagram"><span class="icon">📸</span> Instagram Sekolah</button>
+            <button class="menu-item blue" id="facebook"><span class="icon">📘</span> Facebook Sekolah</button>
+            <button class="menu-item blue" id="alamat"><span class="icon">📍</span> Alamat Sekolah</button>
+            <button class="menu-item blue" id="galeri"><span class="icon">🖼️</span> Galeri Sekolah</button>
+            <button class="menu-item blue" id="kontak"><span class="icon">📞</span> Kontak Sekolah</button>
+            <button class="menu-item blue" id="email"><span class="icon">✉️</span> Email</button>
+        </section>
+        
+        <script>
+            const links = {
+                portSecurity: "https://youtu.be/2GZn5si3GUM?si=wNKwFdcXstqiCLp0",
+                vlanTrunking: "https://youtu.be/Nl8p5K8wq_M?si=dItkqeRU9QiGzKBG",
+                remoteAccess: "https://youtu.be/tw2mUcziOxg?si=zVqM7ehdRVeruTuO",
+                website: "https://www.smkn2baleendah.sch.id/",
+                instagram: "https://www.instagram.com/smkn2be?igsh=MTE4M2U3dTVzcTlkMA==",
+                facebook: "https://www.facebook.com/example",
+                galeri: "https://www.example.com/galeri",
+                alamat: "https://maps.app.goo.gl/rVRPsQALL7FZs3zSA"
+                Email: "smknduabaleendahbdg@gmail.com"
+            };
+
+            Object.keys(links).forEach(id => {
+                document.getElementById(id).addEventListener("click", () => {
+                    window.open(links[id], "_blank");
+                });
+            });
+
+            document.getElementById("kontak").addEventListener("click", () => {
+                alert("Kontak Sekolah: +62 812-3456-7890");
+            });
+
+            document.getElementById("email").addEventListener("click", () => {
+                window.location.href = "mailto:example@email.com";
+            });
+        </script>
+    </body>
+    </html>
